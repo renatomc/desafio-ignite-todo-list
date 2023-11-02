@@ -1,0 +1,10 @@
+.toDoForm {
+  margin-top: -2rem;
+}
+
+.toDoForm form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
