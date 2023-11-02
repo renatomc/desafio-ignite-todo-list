@@ -1,0 +1,23 @@
+.fakeCheckBox {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--blue-300);
+  border-radius: 50%;
+}
+
+.fakeCheckBox:hover {
+  background-color: rgb(78 168 222 / 21%);
+  border: 2px solid var(--blue-500);
+}
+
+.fakeCheckBoxIsCheck {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--purple-500);
+  background-color: var(--purple-500);
+  border-radius: 50%;
+  color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

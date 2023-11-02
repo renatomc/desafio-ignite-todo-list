@@ -11,8 +11,6 @@ export function ToDo() {
   const [todo, setTodo] = useState('');
   const [todoList, setTodoList] = useState<ToDoItemData[]>([]);
 
-  console.log({todoList});
-
   function handleSubmit() {
     const newTodoList:ToDoItemData = {
       id: uuidv4(),
@@ -34,7 +32,7 @@ export function ToDo() {
       if(todoItem.id === id) {
         return {
           ...todoItem,
-          isComplete: true
+          isComplete: !todoItem.isComplete
         }
       }
       return todoItem;

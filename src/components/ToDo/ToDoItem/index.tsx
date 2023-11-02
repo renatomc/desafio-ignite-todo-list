@@ -1,6 +1,8 @@
+import { Trash } from 'phosphor-react';
 import { ToDoItemData } from '../../../types/ToDoItem';
 
 import styles from './styles.module.css';
+import { FakeCheckBox } from '../../Form/FakeCheckBox';
 
 type ToDoItemProps = {
   item: ToDoItemData;
@@ -20,8 +22,16 @@ export function ToDoItem({ item, onCompleteItem, onDeleteItem }: ToDoItemProps) 
   }
 
   return (
-    <div className={styles.toDoItem} onClick={() => handleCompleteItem(item.id!)}>
-      {item.description}
+    <div className={styles.toDoItem}>
+      <div className={styles.itemWrapper} onClick={() => handleCompleteItem(item.id!)}>
+        <FakeCheckBox isChecked={item.isComplete} />
+        <span className={item.isComplete ? styles.descriptionIsComplete : styles.description}>
+          {item.description}
+        </span>
+      </div>
+      <button onClick={() => handleDeleteItem(item.id!)}>
+        <Trash size={22} />
+      </button>
     </div>
   )
 }

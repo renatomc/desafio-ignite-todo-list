@@ -1,1 +1,43 @@
-.toDoItem {}
+.toDoItem {
+  display: flex;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-400);
+  background: var(--gray-500);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+  justify-content: space-between;
+}
+
+.itemWrapper {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.toDoItem button {
+  background-color: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.toDoItem button:hover {
+  color: var(--red-500);
+}
+
+.description, .descriptionIsComplete {
+  color: var(--gray-100);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.descriptionIsComplete {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
