@@ -1,14 +1,25 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
 import { Form } from './Form';
-import styles from './styles.module.css';
 import { List } from './List';
+import { ToDoItemData } from '../../types/ToDoItem';
+
+import styles from './styles.module.css';
 
 export function ToDo() {
   const [todo, setTodo] = useState('');
-  const [todoList, setTodoList] = useState(['']);
+  const [todoList, setTodoList] = useState<ToDoItemData[]>([]);
 
   function handleSubmit() {
-    setTodoList([...todoList, todo]);
+
+    const newTodoList:ToDoItemData = {
+      id: uuidv4(),
+      description: todo,
+      isComplete: true,
+    };
+
+    setTodoList([...todoList, newTodoList]);
     setTodo('');
   }
 
@@ -17,7 +28,7 @@ export function ToDo() {
   return (
     <div className={styles.todo}>
       <Form onSubmit={handleSubmit} todo={todo} setTodo={setTodo}  />
-      <List />
+      <List toDoList={todoList} />
     </div>
   );
 }
