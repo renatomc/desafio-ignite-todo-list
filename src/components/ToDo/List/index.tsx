@@ -2,13 +2,15 @@ import { ClipboardText } from 'phosphor-react';
 import styles from './styles.module.css';
 import { ToDoItemData } from '../../../types/ToDoItem';
 import { useMemo } from 'react';
+import { ToDoItem } from '../ToDoItem';
 
 type ListProps = {
   toDoList: ToDoItemData[];
+  onDeleteItem: (id: string) => void;
+  onCompleteItem: (id: string) => void;
 }
 
-export function List({ toDoList }: ListProps) {
-
+export function List({ toDoList, onCompleteItem, onDeleteItem }: ListProps) {
   const todoCreated = useMemo(() => {
     return toDoList.length;
   },[toDoList])
@@ -35,10 +37,13 @@ export function List({ toDoList }: ListProps) {
         </div>
       </div>
       <div className={styles.content}>
-        {toDoList?.length > 0 && toDoList.map(toDo => (
-            <div key={toDo.id}>
-              <p>{toDo.description}</p>
-            </div>
+        {toDoList?.length > 0 && toDoList.map(toDoItem => (
+            <ToDoItem 
+              key={toDoItem.id} 
+              item={toDoItem} 
+              onCompleteItem={onCompleteItem} 
+              onDeleteItem={onDeleteItem} 
+            />
         ))}
         {toDoList?.length === 0 && (
           <div className={styles.notContent}>
