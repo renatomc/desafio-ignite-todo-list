@@ -84,3 +84,9 @@
 .labelTodoCompleted {
   color: var(--purble-300);
 }
+
+@media(max-width: 750px) {
+  .list {
+    padding: 0 1.5rem;
+  }
+}
