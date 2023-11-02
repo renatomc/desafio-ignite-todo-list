@@ -1,0 +1,83 @@
+.list {}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 65px;
+}
+
+.content {
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.notContent {
+  display: flex;
+  padding: 64px 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notContent svg {
+  color: var(--gray-400);
+}
+
+.notContentTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.notContentTitle {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.notContentText {
+  color: var(--gray-300);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.toDoCreatedWrapper, .toDoCompletedWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.labelToDoCreated, .labelTodoCompleted {
+  color: var(--blue-500);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.toDoCreatedContent, .toDoCompletedContent {
+  display: flex;
+  padding: 2px 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.labelTodoCompleted {
+  color: var(--purble-300);
+}

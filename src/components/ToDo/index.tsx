@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Form } from './Form';
 import styles from './styles.module.css';
+import { List } from './List';
 
 export function ToDo() {
   const [todo, setTodo] = useState('');
@@ -12,10 +13,11 @@ export function ToDo() {
   }
 
   console.log({todoList});
-  
+
   return (
     <div className={styles.todo}>
       <Form onSubmit={handleSubmit} todo={todo} setTodo={setTodo}  />
+      <List />
     </div>
   );
 }
